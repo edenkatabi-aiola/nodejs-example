@@ -24,7 +24,7 @@ io.on('connection', (socket) => {
   socket.on('binary_data', (msg) => {
     console.log('Message: ' + msg.toString());
   });
-  console.log('a user connected');
+  console.log('a user connected', socket.request.url, socket.request.headers);
 });
 
 server.listen(port, () => {
