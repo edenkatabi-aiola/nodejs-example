@@ -12,7 +12,9 @@ const io = new Server(server, {
 });
 
 app.get('/', (req, res) => {
-  res.send(`result: ${req.protocol}://${req.get('host')}${req.originalUrl}`);
+  const result = `result: ${req.protocol}://${req.get('host')}${req.originalUrl}`;
+  console.log(result);
+  res.send(result);
 })
 
 io.on('connection', (socket) => {
